@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Creating an Object</title>
+
+    <script>
+        //mynewObject = new Object();
+        //mynewObject.info = "I'm a shiny new object.";
+
+        // TECHNIQUE 1: Create global function then assign to object property...
+        //function myFunction() {
+        //    alert(this.info);
+        //}
+
+        //mynewObject.showInfo = myFunction;
+
+        // TECHNIQUE 2: Create anonymous function for object property...
+        //mynewObject.showInfo = function () { alert(this.info);
+
+        // TECHNIQUE 3: define object with constructor, then create an instance...
+        function myObjectType(personName) {
+            this.name = personName;
+            this.info = "I'm a shiny new object."
+            this.showInfo = function () { alert(this.info); }
+            this.setInfo = function (newInfo) { this.info = newInfo; }
+            this.showPersonName = function () { alert("My name is " + this.name) };
+        }
+
+        var mynewObject = new myObjectType("Jim");
+        mynewObject.setInfo("This is new info for object 1.");
+
+        var mynewObject2 = new myObjectType("Jane");
+        mynewObject2.setInfo("This is new info for object 2.");
+
+        var mynewObject3 = new myObjectType("Mary");
+        mynewObject3.setInfo("This is new info for object 3.");
+
+
+        function Car(make, model, year, miles)
+        {
+            this.make = make;
+            this.model = model; 
+            this.year = year;
+            this.miles = miles;
+            this.toString = function () { return "Car: " + year + " " + make + " " + model + " with " + miles + " miles."; }
+        }
+
+        var car1 = new Car("Chevrolet", "Corvette", 2000, 41000);
+        var car2 = new Car("BMW", "X5", 2002, 60000);
+        var car3 = new Car("Land Rover", "LR4", 2012, 45000);
+        var car4 = new Car("Chevrolet", "Corvette", 2008, 35000);
+
+        var cars = [car1, car2, car3, car4];
+
+        function showCars() {
+            var inventory = "";
+            for (carIndex in cars)
+            {
+                inventory += cars[carIndex].toString();
+                inventory += "\n";
+            }
+
+            alert(inventory);
+        }
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Show Info 1" onclick="mynewObject.showPersonName()" />
+    <input type="button" value="Show Info 2" onclick="mynewObject2.showPersonName()" />
+    <input type="button" value="Show Info 3" onclick="mynewObject3.showPersonName()" />
+
+    <br /><br />
+
+    <input type="button" value="Show Cars" onclick="showCars();" />
+</body>
+</html>

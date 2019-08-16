@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Strings and Arrays</title>
+
+<script>
+    function wrangleArray() {
+        var sentence = "JavaScript is a decently cool language.";
+        var newSentence = "";
+
+        document.getElementById("div1").innerHTML = "<p>" + sentence + "</p>";
+
+        var words = sentence.split(" ");
+        var message = words.splice(3, 2, "powerful");
+        alert("Removed words: " + message);
+
+        document.getElementById("div2").innerHTML = "<p>" + words.join(" ") + "</p>";
+    }
+</script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <script>
+        wrangleArray();
+    </script>
+</body>
+</html>

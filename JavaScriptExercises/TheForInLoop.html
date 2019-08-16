@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>The For-In Loop</title>
+</head>
+<body>
+<script>
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var message = "";
+
+    for (i in days)
+    {
+        message += "Day " + i + " is " + days[i] + "\n";
+    }
+
+    alert(message);
+</script>
+</body>
+</html>

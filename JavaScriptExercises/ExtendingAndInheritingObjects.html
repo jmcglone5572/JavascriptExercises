@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Extending and Inheriting Objects</title>
+
+
+    <script src="scripts/Pet.js">
+    </script>
+
+    <script src="scripts/Person.js">
+    </script>
+
+    <script>
+
+        var person1 = new Person("Adam");
+        var person2 = new Person("Eve");
+
+        // extending an object...
+        Person.prototype.sayHello = function () {
+            alert(this.name + " says hello.");
+        }
+
+
+
+
+
+
+        var myCat = new Pet();
+        myCat.setAnimal("cat");
+        myCat.setName("Sylvester");
+
+
+        function Dog() {
+            breed = "";
+            this.setBreed = function (newBreed) {
+                this.breed = newBreed;
+            }
+        }
+
+        // inheriting from an object...
+        Dog.prototype = new Pet();
+
+
+        var myDog = new Dog();
+        myDog.setName("Laney");
+        myDog.setBreed("Labrador Retreiver");
+        myDog.setAnimal("dog");
+        alert(myDog.name + " is a " + myDog.breed);
+
+        // extending a built in object (string)...
+        String.prototype.backwards = function () {
+            var out = "";
+
+            for (var i = this.length - 1; i >= 0; i--) {
+                out += this.substr(i, 1);
+            }
+
+            return out;
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Show Info on Adam" onclick="person1.showInfo()" />
+    <input type="button" value="Say Hello Adam" onclick="person1.sayHello()" />
+    
+    <br/> <br/>
+
+    <input type="button" value="Show Info on Eve" onclick="person2.showInfo()" />
+    <input type="button" value="Say Hello Eve" onclick="person2.sayHello()" />
+
+
+    <br /> <br />
+    <script>
+        var inString = prompt("Enter your test string:");
+
+        if (inString != null && inString != "")
+        {
+            document.write(inString.backwards());
+        }
+    </script>
+
+</body>
+</html>

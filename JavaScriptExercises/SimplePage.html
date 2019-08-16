@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>A Simple HTML Page</title>
+</head>
+
+<body>
+    <input type="button" value="Say Hello" onclick="sayHello()"/>
+    
+    <br /> <br />
+    <input type="button" value="Calculate Cube" onclick="displayCube()" />
+    
+    <br /> <br />
+    <input type="button" value="Get 4 * 5" onclick="times(4, 5)" />
+
+    <br /> <br />
+    <input type="button" id="id1" name="Button1" value="Click Me for Info" onclick="buttonReport(this.id, this.name, this.value)" />
+
+    <br /> <br />
+    <input type="button" id="id2" name="left button" value="Left" onclick="buttonReport(this.id, this.name, this.value)" />
+    <input type="button" id="id3" name="center button" value="Center" onclick="buttonReport(this.id, this.name, this.value)" />
+    <input type="button" id="id4" name="right button" value="Right" onclick="buttonReport(this.id, this.name, this.value)" />
+
+    <br /> <br />
+    <input type="button" value="Access Div1" onclick="accessDiv1Element()" />
+
+    <br /> <br />
+    <input type="button" value="Check Browser History" onclick="checkBrowserHistory()" />
+
+    <br /> <br />
+    <div id="div1">
+        ... Content of Div element ...
+    </div>
+
+
+    <script src="scripts/MyCode.js"></script>
+</body>
+
+</html>

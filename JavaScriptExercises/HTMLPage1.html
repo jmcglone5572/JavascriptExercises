@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Test Page</title>
+</head>
+<body>
+    <h1>Welcome to our site.</h1>
+    <script>
+        'use strict';
+
+        var myModule = (function ()
+        {
+            var my = {};
+            var privateVar = 123;
+            var privateMethod = function ()
+            {
+
+            };
+            my.property = 456;
+            my.publicMethod = function ()
+            {
+                privateMethod();
+            }
+
+            return my;
+        }
+        )();
+
+    </script>
+</body>
+</html>
