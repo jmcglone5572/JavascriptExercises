@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,12 +68,16 @@
   <ItemGroup>
     <Content Include="ArrayManipulation.html" />
     <Content Include="Banner.html" />
+    <Content Include="CapturingOnClick.html" />
     <Content Include="CreatingAnObject.html" />
     <Content Include="DateAndTimeInfo.html" />
     <Content Include="EventHandlerCancelDefaultBehavior.html" />
+    <Content Include="EventHandlersAddingAndRemoving.html" />
     <Content Include="ExtendingAndInheritingObjects.html" />
     <Content Include="JsonMultilevelObjects.html" />
     <Content Include="JsonParsing.html" />
+    <Content Include="scripts\Cookie.js" />
+    <Content Include="scripts\Events.js" />
     <Content Include="scripts\MyCode.js" />
     <Content Include="Navigator.html" />
     <Content Include="scripts\Person.js" />
@@ -88,6 +93,7 @@
     <Content Include="Scope.html" />
     <Content Include="scripts\Pet.js" />
     <Content Include="SimplePage.html" />
+    <Content Include="testCookie.html" />
     <Content Include="TheForInLoop.html" />
     <Content Include="Web.config" />
   </ItemGroup>
